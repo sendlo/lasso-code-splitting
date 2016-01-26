@@ -17,7 +17,10 @@ require('lasso').configure({
                 }
             ]
         }
-    ]
+    ],
+    'plugins': [
+        "lasso-marko"
+    ]    
 });
 
 var app = express();
@@ -37,3 +40,16 @@ app.listen(port, function(err) {
 
     console.log('Listening on port %d', port);
 });
+
+
+
+plugins: [
+        {
+            plugin: 'lasso-require',
+            config: {
+                transforms: [ // Browserify compatible transforms
+                    'deamdify'
+                ]
+            }
+        }
+    ]
